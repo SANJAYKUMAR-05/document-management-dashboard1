@@ -82,7 +82,7 @@ export default function Upload(){
             ))}
           </div>
           <div className="mt-4">
-            <button onClick={uploadAll} className="px-4 py-2 bg-primary-500 text-white rounded">Start Upload</button>
+            <button onClick={uploadAll} className="px-4 py-2 bg-primary-500 text-black rounded">Start Upload</button>
           </div>
         </div>
         <div>
