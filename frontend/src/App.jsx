@@ -32,11 +32,15 @@ export default function App() {
     });
 
     socket.on('notification_read', ({ id }) => {
-      setNotifications((prev) => prev.map(p => p.id === id ? { ...p, read: true } : p));
+      setNotifications((prev) =>
+        prev.map((p) => (p.id === id ? { ...p, read: true } : p))
+      );
     });
 
     socket.on('notifications_read_all', () => {
-      setNotifications((prev) => prev.map(p => ({ ...p, read: true })));
+      setNotifications((prev) =>
+        prev.map((p) => ({ ...p, read: true }))
+      );
     });
 
     return () => {
@@ -49,9 +53,12 @@ export default function App() {
   return (
     <SocketContext.Provider value={socket}>
       <div className="min-h-screen flex bg-white text-gray-800">
+
         <Sidebar />
+
         <div className="flex-1">
           <Header notifications={notifications} />
+
           <main className="p-6">
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -60,6 +67,7 @@ export default function App() {
             </Routes>
           </main>
         </div>
+
       </div>
     </SocketContext.Provider>
   );

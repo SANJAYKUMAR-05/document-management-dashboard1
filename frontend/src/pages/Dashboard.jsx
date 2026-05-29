@@ -4,6 +4,7 @@ import DocumentsTable from '../components/DocumentsTable';
 import Loader from '../components/Loader';
 
 export default function Dashboard(){
+  
   const [docs, setDocs] = useState([]);
   const [loading, setLoading] = useState(true);
 
